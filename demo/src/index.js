@@ -1,5 +1,5 @@
 import Alpine from 'alpinejs';
-import Defer from '../../src/index.js';
+import Defer from 'alpinejs-defer';
 
 window.Alpine = Alpine;
 

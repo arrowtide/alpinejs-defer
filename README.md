@@ -17,12 +17,12 @@ Alpine.js is an amazing tool, but as your component library grows, initializing 
 ### NPM
 
 ```bash
-npm install arrowtide/alpine-defer
+npm install alpinejs-defer
 ```
 
 ```js
 import Alpine from "alpinejs";
-import Defer from "arrowtide/alpinejs-defer";
+import Defer from "alpinejs-defer";
 
 
 Alpine.directive('defer', Defer).before('ignore');
