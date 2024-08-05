@@ -39,11 +39,13 @@ Will initialise the component just before it hits the window using the `Intersec
 
 ```html
 <div x-defer:intersect>
-	...
+  ...
 </div>
 ```
 
-### `x-defer:event
+---
+
+### `x-defer:event`
 
 Will initialise the component when an event you specify is fired on the `window`. 
 
@@ -51,28 +53,30 @@ eg.
 
 ```html
 <button x-data @click.window="$dispatch('open-navigation')">
-	Open Navigation
+  Open Navigation
 </button>
 
 <nav x-data="nav">
 
-	
 	...
 	
-	<!-- Some deeply nested component -->
-	<div x-defer:event="open-navigation">
-		...
-	</div>
+  <!-- Some deeply nested component -->
+  <div x-defer:event="open-navigation">
+    ...
+  </div>
 </nav>
 ```
 
 > [!IMPORTANT]  
 >  Events like `load` will not work properly and will cause components to sometimes not initialise. Events should come from a specific action, like a click that triggers your custom event. 
 
+---
 
-### `x-defer:interaction`
+### `x-defer:interact`
 
 Will initialise the element when a user interacts with the page in any way.
+
+---
 
 ### `x-defer`
 
