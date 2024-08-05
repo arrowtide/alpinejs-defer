@@ -2,12 +2,17 @@
 
 An Alpine.js directive designed to address the issue of large running tasks occupying main thread time by deferring components until they are needed.
 
+## Demo
+
+[View the demo](https://arrowtide.github.io/alpinejs-defer/)
 
 ## About
 
 Alpine.js is an amazing tool, but as your component library grows, initializing them all on Alpine.start() or Livewire.start() can cause your application to freeze at the beginning of each request. This means other important tasks can't be performed until Alpine has traversed the entire DOM.
 
-![alt text](header.png "Title")
+
+
+![Main javascript thread before and after, before is showing a 0.7s initial task and 0.2s after](header.png)
 
 ## Installation
 
