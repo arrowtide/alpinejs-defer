@@ -1,0 +1,9 @@
+{
+    "name": "alpinejs-defer",
+    "version": "1.0.0",
+    "description": "Defer components until they're needed.",
+    "author": "Jon Karic",
+    "license": "MIT",
+    "type": "module",
+    "main": "src/index.js"
+}
