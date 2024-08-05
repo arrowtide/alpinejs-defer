@@ -8,24 +8,32 @@
     <link rel="stylesheet" href="src/style.css">
     <script type="module" src="/src/index.js"></script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+
 </head>
-<body class="antialiased text-white bg-slate-900">
+<body class="antialiased font-thin text-white bg-slate-900 font-default">
 
-    <p class="max-w-4xl mx-auto my-32 text-2xl font-semibold text-center text-rose-500">
-        Components are on a 300ms delay for demonstration purposes.
-    </p>
-
-    <section class="py-32 text-center bg-slate-900">
+    <section class="bg-slate-950">
+        <div class="container px-10 py-32 mx-auto text-center">
+            <h1 class="text-5xl font-bold">alpinejs-defer demo</h1>
+            <p class="max-w-4xl mx-auto mt-5 text-2xl font-semibold text-center text-rose-500">
+                Components are on a 300ms delay for demonstration purposes.
+            </p>
+        </div>
+    </section>
+    <section class="px-10 py-32 text-center bg-slate-900">
         <div class="container mx-auto">
-            <h2 class="mb-5 text-4xl font-bold">x-defer:intersect</h2>
+            <h2 class="mb-5 text-4xl font-bold"><code>x-defer:intersect</code></h2>
             <p class="max-w-4xl mx-auto mb-32 text-lg font-semibold">
                 This example shows how the intersect works when initialising components using <code>IntersectionObserver</code>
             </p>
 
-            <div x-data class="grid grid-cols-2 gap-x-10 gap-y-80">
+            <div x-data class="grid grid-cols-2 gap-x-10 gap-y-20 lg:gap-y-80">
                 <template x-for="intersect in 30">
                     <div
-                    class="h-36 rounded-2xl flex justify-center items-center text-xl font-bold w-full aspect-square bg-rose-500 text-rose-900  delay-300 transition duration-300 data-[active]:bg-emerald-500 data-[active]:text-emerald-900"
+                    class="h-36 rounded-2xl flex justify-center items-center text-sm sm:text-base lg:text-xl p-5 font-bold w-full aspect-square bg-rose-500 text-rose-900  delay-300 transition duration-300 data-[active]:bg-emerald-500 data-[active]:text-emerald-900"
                     x-defer:intersect
                         x-data="{
                             text: `This component has not been initialised yet`,
@@ -46,21 +54,21 @@
     </section>
 
     <section class="py-32 text-center bg-slate-800">
-        <div class="container mx-auto">
-            <h2 class="mb-5 text-4xl font-bold">x-defer:event</h2>
+        <div class="container px-10 mx-auto">
+            <h2 class="mb-5 text-4xl font-bold"><code>x-defer:event</code></h2>
             <p class="max-w-4xl mx-auto mb-32 text-lg font-semibold">
                 For when you just want to init a component using an event (on the <code>window</code>).
             </p>
 
 
             <div x-data>
-                <div class="grid grid-cols-3 gap-10">
+                <div class="grid grid-cols-1 gap-3 md:gap-10 md:grid-cols-3">
                     <button
                         type="button"
                         class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
                         @click="$dispatch('event-one')"
                     >
-                        @click="$dispatch('event-one')"
+                        event-one
                     </button>
 
                     <button
@@ -68,7 +76,7 @@
                         class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
                         @click="$dispatch('event-two')"
                     >
-                        @click="$dispatch('event-two')"
+                        event-two
                     </button>
 
                     <button
@@ -76,13 +84,13 @@
                         class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
                         @click="$dispatch('event-three')"
                     >
-                        @click="$dispatch('event-three')"
+                        event-three
                     </button>
                 </div>
 
-                <div x-data class="grid grid-cols-3 mt-10 gap-x-10 gap-y-80">
+                <div x-data class="grid grid-cols-3 gap-2 mt-10 md:gap-x-10 gap-y-80">
                     <div
-                        class="h-36 rounded-2xl flex justify-center items-center text-xl font-bold w-full aspect-square bg-rose-500 text-rose-900  delay-300 transition duration-300 data-[active]:bg-emerald-500 data-[active]:text-emerald-900"
+                        class="h-36 rounded-2xl flex justify-center items-center text-sm sm:text-base lg:text-xl p-5 font-bold w-full aspect-square bg-rose-500 text-rose-900  delay-300 transition duration-300 data-[active]:bg-emerald-500 data-[active]:text-emerald-900"
                         x-defer:event="event-one"
                         x-data="{
                             text: `This component has not been initialised yet`,
@@ -99,7 +107,7 @@
                     </div>
 
                     <div
-                        class="h-36 rounded-2xl flex justify-center items-center text-xl font-bold w-full aspect-square bg-rose-500 text-rose-900  delay-300 transition duration-300 data-[active]:bg-emerald-500 data-[active]:text-emerald-900"
+                        class="h-36 rounded-2xl flex justify-center items-center text-sm sm:text-base lg:text-xl p-5 font-bold w-full aspect-square bg-rose-500 text-rose-900  delay-300 transition duration-300 data-[active]:bg-emerald-500 data-[active]:text-emerald-900"
                         x-defer:event="event-two"
                         x-data="{
                             text: `This component has not been initialised yet`,
@@ -116,7 +124,7 @@
                     </div>
 
                     <div
-                        class="h-36 rounded-2xl flex justify-center items-center text-xl font-bold w-full aspect-square bg-rose-500 text-rose-900  delay-300 transition duration-300 data-[active]:bg-emerald-500 data-[active]:text-emerald-900"
+                        class="h-36 rounded-2xl flex justify-center items-center text-sm sm:text-base lg:text-xl p-5 font-bold w-full aspect-square bg-rose-500 text-rose-900  delay-300 transition duration-300 data-[active]:bg-emerald-500 data-[active]:text-emerald-900"
                         x-defer:event="event-three"
                         x-data="{
                             text: `This component has not been initialised yet`,
@@ -140,9 +148,9 @@
 
 
 
-    <section class="py-32 text-center bg-slate-900">
+    <section class="px-10 py-32 text-center bg-slate-900">
         <div class="container mx-auto">
-            <h2 class="mb-5 text-4xl font-bold">x-defer:interact</h2>
+            <h2 class="mb-5 text-4xl font-bold"><code>x-defer:interact</code></h2>
             <p class="max-w-4xl mx-auto mb-32 text-lg font-semibold">
                 Because Alpine doesn't initialise components inside <code>template</code> tags, we've used it to demonstrate how <code>x-defer:interact</code> works. If you used this attribute outside of a template tag, or within another component with x-defer, then you will get this behaviour. Otherwise it will just happen on the very first interaction on the webpage.
             </p>
@@ -159,7 +167,7 @@
                 <div class="grid grid-cols-5 gap-10 mt-12">
                     <template x-for="component of components">
                         <div
-                        class="h-36 rounded-2xl flex justify-center items-center text-xl font-bold w-full aspect-square bg-rose-500 text-rose-900  delay-300 transition duration-300 data-[active]:bg-emerald-500 data-[active]:text-emerald-900"
+                        class="h-36 rounded-2xl flex justify-center items-center text-sm sm:text-base lg:text-xl p-5 font-bold w-full aspect-square bg-rose-500 text-rose-900  delay-300 transition duration-300 data-[active]:bg-emerald-500 data-[active]:text-emerald-900"
                         x-defer:interact
                             x-data="{
                                 text: `This component has not been initialised yet`,
