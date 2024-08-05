@@ -57,7 +57,7 @@ Will initialise the component when an event you specify is fired on the `window`
 eg.
 
 ```html
-<button x-data @click.window="$dispatch('open-navigation')">
+<button x-data @click="$dispatch('open-navigation')">
   Open Navigation
 </button>
 
